@@ -1,9 +1,9 @@
 <template>
-  <div class="not-found">
-    <h1>404 - Страница не найдена</h1>
-    <p>Извините, запрашиваемая страница не существует.</p>
-    <router-link to="/">Вернуться на главную</router-link>
-  </div>
+  <section class="not-found">
+    <h1>404 - Not found</h1>
+    <p>Sorry, the page you requested does not exist.</p>
+    <router-link to="/">Return to home</router-link>
+  </section>
 </template>
 
 <script lang="ts">

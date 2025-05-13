@@ -88,7 +88,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .docsInfo {
-  margin-top: 60px;
   top: 60px;
   padding: 20px;
   height: 775px;

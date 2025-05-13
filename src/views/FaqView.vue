@@ -250,7 +250,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
   padding: 20px;
 }
 

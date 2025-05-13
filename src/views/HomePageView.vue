@@ -53,17 +53,6 @@ const goToDocs = () => {
 </template>
 
 <style scoped>
-:root {
-  --primary: #4f46e5;
-  --secondary: #4338ca;
-  --accent: #6366f1;
-  --text: #1f2937;
-  --light: #f9fafb;
-  --gray: #e5e7eb;
-  --dark-gray: #6b7280;
-  --border-radius: 8px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -92,7 +81,7 @@ body {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .hero p {
