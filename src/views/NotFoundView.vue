@@ -18,5 +18,6 @@ export default defineComponent({
 .not-found {
   text-align: center;
   padding: 2rem;
+  margin-top: 60px;
 }
 </style>
