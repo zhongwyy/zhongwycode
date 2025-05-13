@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/0x00001234/', // Важно: имя репозитория
+  base: '/zhongwycode/', // Важно: имя репозитория
   build: {
     outDir: 'docs',
     emptyOutDir: true,
