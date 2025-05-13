@@ -3,13 +3,18 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  plugins: [vue()],
-  base: '/', // Важно: имя репозитория
+  plugins: [
+    vue(),
+  ],
+  base: '/', //reponame
   build: {
     outDir: 'docs',
     emptyOutDir: true,
     rollupOptions: {
-      input: './index.html', // Главная точка входа
+      input: {
+        main: './index.html',
+        404: './404.html'
+      },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
