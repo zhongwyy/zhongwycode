@@ -48,7 +48,7 @@ const toggleMobileMenu = () => {
       <div class="navbar-container">
         <div class="logo-container" @click="navigateTo('/')">
           <img class="logo" src="./assets/angleLight.png" alt="zcode logo" width="52" height="52" />
-          <span class="logo-name">zcode</span>
+          <span class="logo-name">zhongwycode</span>
         </div>
 
         <div class="search-container">
@@ -94,10 +94,11 @@ const toggleMobileMenu = () => {
     <div class="container">
       <div class="footer-content">
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="mailto:contact@example.com">Contact</a>
+          <a href="https://github.com/zhongwyy" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:redlineincred@gmail.com">Contact</a>
+          <a href="mailto:merkopcasterl@yandex.ru">alt:Contact</a>
         </nav>
-        <p class="copyright">© 2025 zcode Personal Projects. All rights reserved.</p>
+        <p class="copyright">zhongwycode personal website.<br> All rights reserved. <br> © 2025</p>
       </div>
     </div>
   </footer>
@@ -146,7 +147,7 @@ const toggleMobileMenu = () => {
 .search-container {
   flex: 1;
   padding: 0 20px;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .search-container input {
@@ -175,7 +176,7 @@ const toggleMobileMenu = () => {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-link {

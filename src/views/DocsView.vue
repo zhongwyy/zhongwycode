@@ -7,9 +7,8 @@
       </header>
 
       <div class="docs-grid">
-        <!-- Document 1 -->
         <div class="doc-card">
-          <div class="doc-header">
+          <div class="doc-header-minecraft-header">
             <div class="doc-title">Minecraft Developments</div>
             <div class="doc-meta">Last updated: May 10th, 2025</div>
           </div>
@@ -24,15 +23,13 @@
               <span class="tag">Tutorial</span>
             </div>
             <div class="doc-actions">
-              <button class="btn btn-primary">View Document</button>
+              <button class="btn btn-primary-minecraft-primary">View Document</button>
               <button class="btn btn-outline">Download PDF</button>
             </div>
           </div>
         </div>
-
-        <!-- Document 2 -->
         <div class="doc-card">
-          <div class="doc-header">
+          <div class="doc-header-java-header">
             <div class="doc-title">in Java</div>
             <div class="doc-meta">Last updated: May 10th, 2025</div>
           </div>
@@ -47,13 +44,11 @@
               <span class="tag">Reference</span>
             </div>
             <div class="doc-actions">
-              <button class="btn btn-primary">View Document</button>
+              <button class="btn btn-primary-java-primary">View Document</button>
               <button class="btn btn-outline">Download PDF</button>
             </div>
           </div>
         </div>
-
-        <!-- Document 3 -->
         <div class="doc-card">
           <div class="doc-header">
             <div class="doc-title">Web developments</div>
@@ -85,7 +80,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-mono);
 }
 .docsInfo {
   top: 60px;
@@ -150,6 +145,17 @@ h1 {
   color: white;
   padding: 15px 20px;
 }
+.doc-header-minecraft-header{
+  background-color: var(--color-success);
+  color: white;
+  padding: 15px 20px;
+}
+
+.doc-header-java-header {
+  background-color: var(--color-warning);
+  color: white;
+  padding: 15px 20px;
+}
 
 .doc-title {
   font-size: 1.2rem;
@@ -207,10 +213,25 @@ h1 {
   background-color: var(--color-primary);
   color: var(--color-text);
 }
+.btn-primary-java-primary {
+  background-color: var(--color-warning);
+  color: var(--color-text);
+}
+.btn-primary-minecraft-primary {
+  background-color: var(--color-success);
+  color: var(--color-text);
+}
 
 .btn-primary:hover {
   background-color: var(--color-bg-secondary);
 }
+.btn-primary-java-primary:hover{
+  background-color: var(--color-bg-secondary);
+}
+.btn-primary-minecraft-primary{
+  background-color: var(--color-bg-secondary);
+}
+
 
 .btn-outline {
   background: transparent;

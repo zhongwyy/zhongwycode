@@ -10,8 +10,7 @@ const goToDocs = () => {
   <section class="hero">
     <div class="container">
       <h1>Network of projects by zhongwy</h1>
-      <p>Welcome my friends!</p>
-      <p>Here you can find my projects that I do sometimes!</p>
+      <p>Welcome my friends!<br>Here you can find my projects that I do sometimes!</p>
       <div class="cta-buttons">
         <a href="#" class="btn btn-primary">Explore Projects</a>
         <a href="#" @click="goToDocs" class="btn btn-outline">View Documentation</a>
@@ -72,7 +71,6 @@ body {
   padding: 0 20px;
 }
 
-/* Hero Section */
 .hero {
   padding: 100px 0 80px;
   text-align: center;
@@ -80,6 +78,7 @@ body {
 
 .hero h1 {
   font-size: 3rem;
+  font-weight: normal;
   margin-bottom: 20px;
   color: var(--color-text);
 }
@@ -96,7 +95,6 @@ body {
   gap: 15px;
   justify-content: center;
 }
-
 .btn {
   padding: 12px 24px;
   border-radius: var(--border-md);
@@ -114,7 +112,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: rgba(107, 229, 70, 0.1);
+  background-color: rgba(74, 228, 27, 0.205);
 }
 
 .btn-outline {
@@ -124,7 +122,7 @@ body {
 }
 
 .btn-outline:hover {
-  background-color: rgba(79, 70, 229, 0.1);
+  background-color: rgba(27, 64, 228, 0.212);
 }
 
 /* Features Section */
