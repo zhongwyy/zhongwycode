@@ -9,8 +9,9 @@ const goToDocs = () => {
 <template>
   <section class="hero">
     <div class="container">
-      <h1>Your assistant on my projects</h1>
-      <p>Your personal programming hub for code experiments, projects, and learning resources</p>
+      <h1>Network of projects by zhongwy</h1>
+      <p>Welcome my friends!</p>
+      <p>Here you can find my projects that I do sometimes!</p>
       <div class="cta-buttons">
         <a href="#" class="btn btn-primary">Explore Projects</a>
         <a href="#" @click="goToDocs" class="btn btn-outline">View Documentation</a>
@@ -22,30 +23,29 @@ const goToDocs = () => {
   <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Development Resources</h2>
-        <p>A collection of my programming experiments and documented solutions</p>
+        <h2>Development Info</h2>
+        <p>Full information about where, what and why I write code. </p>
       </div>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">💻</div>
-          <h3>Code Projects</h3>
-          <p>
-            Personal coding experiments and side projects with detailed explanations and source
-            code.
+          <div class="feature-icon">🧠</div>
+          <h3>A stupid development </h3>
+          <p class="text">
+            Custom scripts, stupid, useless and very native things that I do for learning!
           </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">📚</div>
-          <h3>Tech Notes</h3>
-          <p>Documentation, cheatsheets and how-to guides for various technologies I work with.</p>
+          <h3>Web development</h3>
+          <p class="text">Here are developments for web applications written in vue.js.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">⚙️</div>
-          <h3>Dev Toolkit</h3>
-          <p>Custom scripts, configurations and tools I've created to optimize my workflow.</p>
+          <div class="feature-icon">🧊</div>
+          <h3>Minecraft developments</h3>
+          <p class="text">I really love mods developed for Minecraft!</p>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@ const goToDocs = () => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-mono);
 }
 
 body {
@@ -188,6 +188,7 @@ body {
 
 .feature-card p {
   color: var(--color-text-secondary);
+  text-align: center;
 }
 
 @media (max-width: 768px) {
