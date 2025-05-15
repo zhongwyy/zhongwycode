@@ -37,7 +37,10 @@ function showNotification() {
             <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
             <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
             <p>Soon!</p>
-            <img src="../assets/DocsTab.png" alt="Docs tab features" loading="lazy" />
+            <picture>
+              <img src="../assets/DocsTab.png" alt="Docs tab features" loading="lazy" />
+            </picture>
+
           </article>
 
           <article class="blog-post">
@@ -45,7 +48,9 @@ function showNotification() {
             <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
             <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
             <p>Finally!</p>
-            <img src="../assets/DesignComplete.png" alt="Design features" loading="lazy" />
+            <picture>
+              <img src="../assets/DesignComplete.png" alt="Design features" loading="lazy" />
+            </picture>
           </article>
 
           <article class="blog-post">
@@ -53,7 +58,9 @@ function showNotification() {
             <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
             <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
             <p>Update!</p>
-            <img src="../assets/PopUpAdd.png" alt="PopUp features" loading="lazy" />
+            <picture>
+              <img src="../assets/PopUpAdd.png" alt="PopUp features" loading="lazy" />
+            </picture>
           </article>
 
           <article class="blog-post">
@@ -61,7 +68,9 @@ function showNotification() {
             <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
             <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
             <p>Opening!</p>
-            <img src="../assets/ShopOpen.png" alt="Shop Open" loading="lazy" />
+            <picture>
+              <img src="../assets/ShopOpen.png" alt="Shop Open" loading="lazy" />
+            </picture>
           </article>
 
           <article class="blog-post">
@@ -76,7 +85,9 @@ function showNotification() {
               scratch and here updates of what has changed on it will also be published, thank you all
               for your attention!
             </p>
-            <img src="../assets/baseCSS.png" alt="Code features" loading="lazy" />
+            <picture>
+              <img src="../assets/DesignComplete.png" alt="Design features" loading="lazy" />
+            </picture>
           </article>
         </div>
       </div>
