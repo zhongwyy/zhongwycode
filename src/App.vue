@@ -163,8 +163,8 @@ const toggleMobileMenu = () => {
   border: 1px solid var(--color-border);
   outline: none;
   font-size: 1rem;
-  background: var(--color-bg-tertiary);
-  color: var(--color-text-tertiary);
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
 }
 
 .search-container input:focus {
