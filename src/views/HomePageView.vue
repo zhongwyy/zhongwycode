@@ -1,8 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import BottomPopup from '../components/icons/warningPanel.vue'
 const router = useRouter()
 const goToDocs = () => {
   router.push('/docs')
+}
+const popup = ref<InstanceType<typeof BottomPopup>>()
+
+function showNotification() {
+  popup.value?.showPopup()
 }
 </script>
 
@@ -12,8 +19,8 @@ const goToDocs = () => {
       <h1>Network of projects by zhongwy</h1>
       <p>Welcome my friends!<br>Here you can find my projects that I do sometimes!</p>
       <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">Explore Projects</a>
-        <a href="#" @click="goToDocs" class="btn btn-outline">View Documentation</a>
+        <a @click="showNotification" class="btn btn-primary">Explore Projects</a>
+        <a @click="goToDocs" class="btn btn-outline">View Documentation</a>
       </div>
     </div>
   </section>
@@ -49,6 +56,9 @@ const goToDocs = () => {
       </div>
     </div>
   </section>
+  <BottomPopup ref="popup" :auto-close-delay="2000">
+    <span>This feature is not implemented yet</span>
+  </BottomPopup>
 </template>
 
 <style scoped>

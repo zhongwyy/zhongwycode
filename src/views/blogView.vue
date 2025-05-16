@@ -94,7 +94,7 @@ function showNotification() {
     </main>
 
     <BottomPopup ref="popup" :auto-close-delay="2000">
-      <span style="color: var(--color-text)">It doesn't work yet ж3</span>
+    <span>This feature is not implemented yet</span>
     </BottomPopup>
   </div>
 </template>

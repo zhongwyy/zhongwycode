@@ -50,6 +50,7 @@ export default defineComponent({
 
 <style scoped>
 .bottom-popup {
+  font-family: var(--font-mono);
   position: fixed;
   bottom: 0;
   left: 0;
