@@ -15,7 +15,7 @@
           <div class="doc-content">
             <p class="doc-description">
               Explore the latest tools and mods for Minecraft creators. From custom plugins to
-              shader packs, enhance your building experience.
+              shader packs, enhance your building experience, and more!
             </p>
             <div class="doc-tags">
               <span class="tag">List</span>
@@ -228,7 +228,7 @@ h1 {
 .btn-primary-java-primary:hover{
   background-color: var(--color-bg-secondary);
 }
-.btn-primary-minecraft-primary{
+.btn-primary-minecraft-primary:hover{
   background-color: var(--color-bg-secondary);
 }
 
