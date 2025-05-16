@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { ref } from 'vue'
+import { ref, watch} from 'vue'
 import { useRouter } from 'vue-router'
 import BottomPopup from './components/icons/warningPanel.vue'
 import NoResults from './views/NoResults.vue'
@@ -19,7 +19,13 @@ function showNotification() {
 const navigateTo = (path: string) => {
   router.push(path)
   mobileMenuOpen.value = false
+  searchPerformed.value = false
+  searchQuery.value = ''
 }
+watch(() => router.currentRoute.value.path, () => {
+  searchPerformed.value = false
+  searchQuery.value = ''
+})
 
 const performSearch = () => {
   if (searchQuery.value.trim()) {

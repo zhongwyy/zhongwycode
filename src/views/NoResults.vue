@@ -48,6 +48,8 @@ const handleBrowse = () => {
 const closeCard = () => {
   emit('close')
 }
+
+
 </script>
 
 <style scoped>
