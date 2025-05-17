@@ -2,12 +2,29 @@
 import { ref } from 'vue'
 import FloatingPanel from '../components/icons/addPanel.vue'
 import BottomPopup from '../components/icons/warningPanel.vue'
+import ArticleViewer from '../components/ArticleViewer.vue'
+
+import exampleMd from '../assets/articles/example.md?raw'
+import farmersFate from '../assets/articles/farmersFate.md?raw'
 
 const popup = ref<InstanceType<typeof BottomPopup>>()
 
 function showNotification() {
   popup.value?.showPopup()
 }
+
+const articleData = {
+  exampleMd : {
+    title: "# Post support for md extension.",
+    date: new Date("2025-05-17"),
+    markdownContent: exampleMd,
+  },
+  farmersFate: {
+    title: "# Farmer's fate mod.",
+    date: new Date("2025-05-18"),
+    markdownContent: farmersFate,
+  }
+};
 </script>
 
 <template>
@@ -32,63 +49,16 @@ function showNotification() {
         </div>
 
         <div class="content-col">
-          <article class="blog-post">
-            <h1 class="header1"># Development of the Docs tab has begun!</h1>
-            <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
-            <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
-            <p>Soon!</p>
-            <picture>
-              <img src="../assets/DocsTab.png" alt="Docs tab features" loading="lazy" />
-            </picture>
-
-          </article>
-
-          <article class="blog-post">
-            <h1 class="header1"># The application design is finally finished!</h1>
-            <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
-            <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
-            <p>Finally!</p>
-            <picture>
-              <img src="../assets/DesignComplete.png" alt="Design features" loading="lazy" />
-            </picture>
-          </article>
-
-          <article class="blog-post">
-            <h1 class="header1"># Updating app features and using pop-up windows!</h1>
-            <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
-            <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
-            <p>Update!</p>
-            <picture>
-              <img src="../assets/PopUpAdd.png" alt="PopUp features" loading="lazy" />
-            </picture>
-          </article>
-
-          <article class="blog-post">
-            <h1 class="header1"># The shop is opening soon!</h1>
-            <p class="post-meta">May 10th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
-            <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
-            <p>Opening!</p>
-            <picture>
-              <img src="../assets/ShopOpen.png" alt="Shop Open" loading="lazy" />
-            </picture>
-          </article>
-
-          <article class="blog-post">
-            <h1 class="header1"># Opening an app for my open source projects</h1>
-            <p class="post-meta">May 9th, 2025 by <a href="https://github.com/zhongwyy">zhongwy</a></p>
-            <p class="post-stats">👁 0 ♡ 0 ↻ 0</p>
-            <p>
-              Welcome everyone to the alpha opening of my web application where news of my
-              developments will be published and all developments on one page where there will be
-              guides and multiple explanations of what I have done or will do, news of updates of
-              various applications also made by me will also be published, the site was developed from
-              scratch and here updates of what has changed on it will also be published, thank you all
-              for your attention!
-            </p>
-            <picture>
-              <img src="../assets/DesignComplete.png" alt="Design features" loading="lazy" />
-            </picture>
-          </article>
+          <ArticleViewer
+            :title="articleData.farmersFate.title"
+            :date="articleData.farmersFate.date"
+            :markdownContent="articleData.farmersFate.markdownContent"
+          />
+          <ArticleViewer
+            :title="articleData.exampleMd.title"
+            :date="articleData.exampleMd.date"
+            :markdownContent="articleData.exampleMd.markdownContent"
+          />
         </div>
       </div>
     </main>
