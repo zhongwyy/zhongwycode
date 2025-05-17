@@ -16,7 +16,7 @@ function showNotification() {
 <template>
   <section class="hero">
     <div class="container">
-      <h1>Minecraft mods by zhongwy</h1>
+      <h1 class="titleh1"><img src="../assets/minecraftico.svg" type="image/svg+xml" width="48" height="48">Minecraft mods by zhongwy<img src="../assets/minecraftico.svg" type="image/svg+xml" width="48" height="48"></h1>
       <p>Welcome my friends!<br>Here you can find my mods, modpacks, resourcepacks that I do sometimes!</p>
       <div class="cta-buttons">
         <a @click="showNotification" class="btn btn-primary">Explore Projects</a>
@@ -84,6 +84,12 @@ body {
 .hero {
   padding: 100px 0 80px;
   text-align: center;
+}
+.titleh1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 .hero h1 {
