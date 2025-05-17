@@ -85,7 +85,7 @@ export default defineComponent({
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   transform: translateY(100%);
   transition: transform 0.3s ease-out;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .panel-visible {

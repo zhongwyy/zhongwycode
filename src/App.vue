@@ -38,14 +38,18 @@ const showAllContent = () => {
   console.log('Показать все материалы')
 }
 
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value
+  hideNoResults()
+
+}
+
 const hideNoResults = () => {
   searchPerformed.value = false
   searchQuery.value = ''
 }
 
-const toggleMobileMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
+
 </script>
 
 <template>
@@ -256,53 +260,66 @@ const toggleMobileMenu = () => {
 
 @media (max-width: 768px) {
   .navbar-container {
-    flex-wrap: wrap;
-    padding: 10px;
-    height: auto;
-    background-color: var(--color-bg);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 10px 15px;
+    height: 60px;
+    gap: 10px;
+  }
+
+  .logo-container {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .logo-name {
+    display: none;
   }
 
   .search-container {
-    order: 3;
+    grid-column: 2;
+    order: 0;
+    padding: 0;
     width: 100%;
-    padding: 10px 0;
-    max-width: 100%;
   }
 
   .mobile-menu-button {
+    grid-column: 3;
+    justify-self: end;
+    order: 0;
     display: block;
+    margin-left: auto;
   }
 
   .nav-links {
+    grid-column: 1 / -1;
     display: none;
     flex-direction: column;
     width: 100%;
     gap: 10px;
     padding: 20px 0;
+    background: var(--color-bg);
   }
 
   .nav-links.mobile-open {
     display: flex;
-  }
-
-  .nav-link {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .main-content {
-    padding-top: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 }
 
 @media (max-width: 480px) {
-  .logo-name {
-    display: none;
+  .navbar-container {
+    padding: 10px;
   }
 
-  .footer-links {
-    flex-direction: column;
-    gap: 10px;
+  .search-container input {
+    font-size: 0.9rem;
+    padding: 8px 10px;
   }
 }
 </style>

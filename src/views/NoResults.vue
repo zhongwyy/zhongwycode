@@ -1,7 +1,13 @@
 <template>
-  <div v-if="showNoResults" class="no-results-section">
-    <div class="no-results-card">
-      <button @click="closeCard" class="close-button">&times;</button>
+  <div
+    v-if="showNoResults"
+    class="no-results-section"
+    @click="handleSectionClick"
+  >
+    <div
+      class="no-results-card"
+      @click.stop
+    >
       <div class="no-results-icon">😔</div>
       <h3 class="no-results-title">Nothing found</h3>
       <p class="no-results-text">Try changing your search query or</p>
@@ -49,37 +55,47 @@ const closeCard = () => {
   emit('close')
 }
 
-
+const handleSectionClick = (event: MouseEvent) => {
+  // Закрываем только если кликнули именно на секцию (не на дочерние элементы)
+  if (event.target === event.currentTarget) {
+    closeCard()
+  }
+}
 </script>
 
 <style scoped>
 .no-results-section {
-  margin-top: 120px;
+  position: fixed;
+  top: 60px;
+  left: 0;
   width: 100vw;
-  height: 350px;
-  padding: 0 20px;
+  height: calc(100vh - 60px);
+  background: rgba(10, 1, 1, 0.164);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
 }
 
 .no-results-card {
-  background: var(--color-bg);
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 400px;
   text-align: center;
+  background-color: var(--color-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--color-text);
-  cursor: pointer;
-  width: 100%;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+.no-results-section {
+  transition: opacity 0.3s ease;
 }
+.no-results-leave-active {
+  opacity: 0;
+}
+
 .no-results-icon {
   font-size: 3rem;
   color: var(--color-text-secondary);
