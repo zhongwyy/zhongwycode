@@ -2,10 +2,10 @@
   <div v-if="showNoResults" class="no-results-section">
     <div class="no-results-card">
       <button @click="closeCard" class="close-button">&times;</button>
-      <div class="no-results-icon">🔍</div>
-      <h3 class="no-results-title">Ничего не найдено</h3>
-      <p class="no-results-text">Попробуйте изменить поисковый запрос или</p>
-      <button @click="handleBrowse" class="no-results-button">Посмотреть все материалы</button>
+      <div class="no-results-icon">😔</div>
+      <h3 class="no-results-title">Nothing found</h3>
+      <p class="no-results-text">Try changing your search query or</p>
+      <button @click="handleBrowse" class="no-results-button">View all materials</button>
     </div>
   </div>
 </template>

@@ -1,8 +1,12 @@
-import { createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory, type RouterScrollBehavior} from 'vue-router'
 import BlogView from '../views/blogView.vue'
 import FaqView from '../views/FaqView.vue'
 import DocsView from '../views/DocsView.vue'
 import HomePageView from '../views/HomePageView.vue'
+
+const scrollBehavior: RouterScrollBehavior = () => {
+  return { top: 0 }
+}
 
 
 const router = createRouter({
@@ -29,6 +33,7 @@ const router = createRouter({
       component: () => import('../views/NotFoundView.vue')
     }
   ],
+  scrollBehavior
 })
 
 

@@ -1,16 +1,16 @@
 <template>
   <div class="faqInfo">
     <header>
-      <h1>Programming FAQ</h1>
-      <p class="subtitle">Frequently Asked Questions for Developers</p>
+      <h1>Minecraft modding FAQ</h1>
+      <p class="subtitle">Frequently Asked Questions for Users</p>
     </header>
 
     <div class="faq-container">
       <div class="faq-section">
-        <div class="section-title">1. Getting Started with Programming</div>
+        <div class="section-title">1. What mod categories do I prefer?</div>
         <ul class="faq-list">
           <li class="faq-item">
-            <div class="faq-question">What programming language should I learn first?</div>
+            <div class="faq-question">Mods for vanilla game with minor gameplay changes.</div>
             <div class="faq-answer">
               <p>It depends on your goals:</p>
               <ul>
@@ -34,7 +34,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">How long does it take to learn programming?</div>
+            <div class="faq-question">Graphic mods such as shaders, textures, GUI.</div>
             <div class="faq-answer">
               <p>It varies, but with consistent practice:</p>
               <ul>
@@ -46,7 +46,7 @@
           </li>
           <li class="faq-item">
             <div class="faq-question">
-              Do I need a computer science degree to become a programmer?
+              Mods that change the behavior of the world, change generation.
             </div>
             <div class="faq-answer">
               <p>
@@ -191,10 +191,10 @@
       </div>
 
       <div class="faq-section">
-        <div class="section-title">5. Future of Programming</div>
+        <div class="section-title">5. My social networks and how to find me</div>
         <ul class="faq-list">
           <li class="faq-item">
-            <div class="faq-question">Will AI replace programmers?</div>
+            <div class="faq-question">Telegram, Twitter/X, Reddit</div>
             <div class="faq-answer">
               <p>
                 Unlikely. AI (like GitHub Copilot) assists but can't replace human problem-solving.
@@ -203,7 +203,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">What should I learn next after basics?</div>
+            <div class="faq-question">GitHub, StackOverflow, Habr</div>
             <div class="faq-answer">
               <p>Explore:</p>
               <ul>
@@ -214,7 +214,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">How do I stay updated with tech trends?</div>
+            <div class="faq-question">Gmail, YandexMail</div>
             <div class="faq-answer">
               <p>Follow:</p>
               <ul>

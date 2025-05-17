@@ -40,6 +40,55 @@
   --color-link-hover: var(--color-primary-hover);
 }
 
+:root {
+  /* Розовые пастельные */
+  --pastel-pink: #ffd1dc;
+  --pastel-rose: #ffb7c5;
+  --pastel-blush: #ff9eb5;
+
+  /* Голубые и синие пастельные */
+  --pastel-blue: #a7c7e7;
+  --pastel-sky: #b0e0e6;
+  --pastel-baby-blue: #c1e0ff;
+  --pastel-light-blue: #add8e6;
+
+  /* Зеленые пастельные */
+  --pastel-mint: #b5ead7;
+  --pastel-green: #c1f2b0;
+  --pastel-lime: #d8f3a2;
+  --pastel-seafoam: #9fe2bf;
+
+  /* Фиолетовые и сиреневые пастельные */
+  --pastel-lavender: #e6e6fa;
+  --pastel-purple: #d8bfd8;
+  --pastel-lilac: #c8a2c8;
+  --pastel-violet: #d4bbff;
+
+  /* Желтые и персиковые пастельные */
+  --pastel-yellow: #fffacd;
+  --pastel-lemon: #fdfd96;
+  --pastel-peach: #ffd8b1;
+  --pastel-apricot: #ffc3a0;
+
+  /* Коричневые и бежевые пастельные */
+  --pastel-beige: #f5f5dc;
+  --pastel-tan: #e6cba8;
+  --pastel-camel: #d2b48c;
+
+  /* Серые и нейтральные пастельные */
+  --pastel-gray: #d3d3d3;
+  --pastel-cloud: #e8e8e8;
+  --pastel-ivory: #fffff0;
+}
+
+:root {
+  --text-dark: #333333;       /* Универсальный темно-серый */
+  --text-soft-black: #4a4a4a; /* Мягкий черный */
+  --text-charcoal: #2d3748;   /* Теплый глубокий серый */
+  --text-navy: #1e3656;       /* Темно-синий для контраста */
+  --text-dark-brown: #5c4d3c; /* Для бежевых/персиковых фонов */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #121212;

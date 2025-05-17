@@ -16,8 +16,8 @@ function showNotification() {
 <template>
   <section class="hero">
     <div class="container">
-      <h1>Network of projects by zhongwy</h1>
-      <p>Welcome my friends!<br>Here you can find my projects that I do sometimes!</p>
+      <h1>Minecraft mods by zhongwy</h1>
+      <p>Welcome my friends!<br>Here you can find my mods, modpacks, resourcepacks that I do sometimes!</p>
       <div class="cta-buttons">
         <a @click="showNotification" class="btn btn-primary">Explore Projects</a>
         <a @click="goToDocs" class="btn btn-outline">View Documentation</a>
@@ -165,6 +165,7 @@ body {
 }
 
 .feature-card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
