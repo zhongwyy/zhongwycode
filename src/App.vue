@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { ref, watch} from 'vue'
+import { ref, watch, onMounted} from 'vue'
 import { useRouter } from 'vue-router'
 import BottomPopup from './components/icons/warningPanel.vue'
 import NoResults from './views/NoResults.vue'
@@ -49,6 +49,14 @@ const hideNoResults = () => {
   searchQuery.value = ''
 }
 
+onMounted(() => {
+  const router = useRouter()
+  const redirectPath = sessionStorage.getItem('redirect')
+  if (redirectPath) {
+    sessionStorage.removeItem('redirect')
+    router.push(redirectPath)  // Переходим на сохранённый путь
+  }
+})
 
 </script>
 
