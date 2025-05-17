@@ -57,7 +57,7 @@ const hideNoResults = () => {
     <nav class="navbar">
       <div class="navbar-container">
         <div class="logo-container" @click="navigateTo('/')">
-          <img class="logo" src="./assets/angleLight.png" alt="zcode logo" width="52" height="52" />
+          <img class="logo" src="./assets/angleLight.png" alt="zcode logo" width="64" height="64" />
           <span class="logo-name">zhongwycode</span>
         </div>
 
