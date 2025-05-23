@@ -96,7 +96,7 @@ onMounted(() => {
         <a @click="showNotification">Sign Up</a>
       </div>
         <div class="login">
-        <a @click="navigateTo('/Login')">Sign in</a>
+        <a @click="navigateTo('/login')">Sign in</a>
       </div>
         </div>
       </div>
