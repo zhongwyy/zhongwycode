@@ -41,7 +41,7 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: LoginView,
-      meta: { hideForAuth: true }
+      meta: { hideForAuth: false }
     },
     {
       path: '/:pathMatch(.*)*',
