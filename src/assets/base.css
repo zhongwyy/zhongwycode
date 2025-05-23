@@ -156,3 +156,7 @@ button {
 button:hover {
   background: var(--color-button-hover);
 }
+
+.post-content img {
+  width: 750px;
+}

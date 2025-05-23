@@ -2,10 +2,20 @@
 import { ref } from 'vue'
 import FloatingPanel from '../components/icons/addPanel.vue'
 import BottomPopup from '../components/icons/warningPanel.vue'
-import ArticleViewer from '../components/ArticleViewer.vue'
+import PostView from '@/components/PostView.vue';
 
-import exampleMd from '../assets/articles/example.md?raw'
-import farmersFate from '../assets/articles/farmersFate.md?raw'
+import { defineComponent } from 'vue';
+
+
+defineComponent({
+  name: 'PostsView',
+  components: {
+    PostView
+  }
+});
+
+
+
 
 const popup = ref<InstanceType<typeof BottomPopup>>()
 
@@ -13,18 +23,6 @@ function showNotification() {
   popup.value?.showPopup()
 }
 
-const articleData = {
-  exampleMd : {
-    title: "# Post support for md extension.",
-    date: new Date("2025-05-17"),
-    markdownContent: exampleMd,
-  },
-  farmersFate: {
-    title: "# Farmer's fate mod.",
-    date: new Date("2025-05-18"),
-    markdownContent: farmersFate,
-  }
-};
 </script>
 
 <template>
@@ -49,16 +47,9 @@ const articleData = {
         </div>
 
         <div class="content-col">
-          <ArticleViewer
-            :title="articleData.farmersFate.title"
-            :date="articleData.farmersFate.date"
-            :markdownContent="articleData.farmersFate.markdownContent"
-          />
-          <ArticleViewer
-            :title="articleData.exampleMd.title"
-            :date="articleData.exampleMd.date"
-            :markdownContent="articleData.exampleMd.markdownContent"
-          />
+          <div class="posts-view">
+            <PostView />
+          </div>
         </div>
       </div>
     </main>
@@ -229,5 +220,16 @@ a:hover {
   .nav-col.active {
     display: flex;
   }
+}
+
+.posts-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 </style>

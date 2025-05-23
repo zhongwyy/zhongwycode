@@ -3,6 +3,7 @@ import BlogView from '../views/blogView.vue'
 import FaqView from '../views/FaqView.vue'
 import DocsView from '../views/DocsView.vue'
 import HomePageView from '../views/HomePageView.vue'
+import adminView from '@/views/adminView.vue'
 
 const scrollBehavior: RouterScrollBehavior = () => {
   return { top: 0 }
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/docs',
       name: 'docs',
       component: DocsView,
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: adminView,
     },
     {
       path: '/:pathMatch(.*)*',
