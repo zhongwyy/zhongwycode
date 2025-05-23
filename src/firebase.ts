@@ -5,7 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: 'zhongwycode',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: "zhongwycode.firebasestorage.app",
   messagingSenderId: "635313280532",
   appId: "1:635313280532:web:03e4ff557440348d487901",
