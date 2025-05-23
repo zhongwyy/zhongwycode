@@ -15,6 +15,14 @@
 import { defineComponent, computed } from 'vue';
 import { usePostStore } from '../stores/postStore.ts';
 
+export interface Post {
+  id: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  isPublished: boolean;
+}
+
 export default defineComponent({
   name: 'PostList',
   setup() {
@@ -24,14 +32,16 @@ export default defineComponent({
     const formatDate = (dateString: string) => {
       return new Date(dateString).toLocaleString();
     };
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const togglePublish = (post: any) => {
-      postStore.updatePost({
-        ...post,
-        isPublished: !post.isPublished
-      });
-    };
+    const togglePublish = async (post: Post) => {
+    try {
+    await postStore.updatePost({
+      ...post,
+      isPublished: !post.isPublished // Инвертируем статус
+    });
+  } catch (error) {
+    console.error("Ошибка публикации:", error);
+  }
+};
 
     const deletePost = (id: string) => {
       if (confirm('Вы уверены, что хотите удалить этот пост?')) {
