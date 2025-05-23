@@ -17,7 +17,9 @@
       theme="snow"
     />
     <div class="editor-actions">
-      <button @click="savePost" :disabled="!content">Сохранить пост</button>
+      <button @click="savePost" :disabled="isSaving || !content">
+        {{ isSaving ? 'Сохранение...' : 'Сохранить пост' }}
+      </button>
     </div>
   </div>
 </template>
@@ -27,7 +29,8 @@ import { defineComponent, ref } from 'vue';
 import { QuillEditor } from '@vueup/vue-quill';
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import { v4 as uuidv4 } from 'uuid';
-import { usePostStore } from '../stores/postStore.ts';
+import { usePostStore } from '../stores/postStore';
+import type { Post } from '../types/post';
 
 export default defineComponent({
   name: 'PostEditor',
@@ -36,6 +39,7 @@ export default defineComponent({
     const postStore = usePostStore();
     const content = ref('');
     const fileInput = ref<HTMLInputElement | null>(null);
+    const isSaving = ref(false);
 
     const editorOptions = {
       modules: {
@@ -69,8 +73,6 @@ export default defineComponent({
         const reader = new FileReader();
 
         reader.onload = (e) => {
-          // В реальном приложении здесь нужно загружать изображение на сервер
-          // В нашем случае просто добавляем как base64
           const imageUrl = e.target?.result as string;
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const quill = (document.querySelector('.ql-editor') as any)?.__vueParentComponent?.ctx.quill;
@@ -84,9 +86,12 @@ export default defineComponent({
       }
     };
 
-    const savePost = () => {
-      if (content.value) {
-        const newPost = {
+    const savePost = async () => {
+      if (!content.value) return;
+
+      isSaving.value = true;
+      try {
+        const newPost: Post = {
           id: uuidv4(),
           content: content.value,
           createdAt: new Date().toISOString(),
@@ -94,9 +99,14 @@ export default defineComponent({
           isPublished: false
         };
 
-        postStore.updatePost(newPost);
+        await postStore.addPost(newPost);
         content.value = '';
-        alert('Пост сохранен!');
+        alert('Пост успешно сохранен!');
+      } catch (error) {
+        console.error('Ошибка при сохранении поста:', error);
+        alert('Не удалось сохранить пост');
+      } finally {
+        isSaving.value = false;
       }
     };
 
@@ -104,6 +114,7 @@ export default defineComponent({
       content,
       editorOptions,
       fileInput,
+      isSaving,
       insertImage,
       handleImageUpload,
       savePost

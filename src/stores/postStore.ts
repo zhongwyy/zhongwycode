@@ -6,7 +6,8 @@ import {
   deleteDoc,
   onSnapshot,
   query,
-  orderBy
+  orderBy,
+  addDoc
 } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { computed, onUnmounted, ref } from 'vue';
@@ -34,6 +35,22 @@ export const usePostStore = defineStore('posts', () => {
     }, (error) => {
       console.error("Ошибка подписки:", error);
     });
+  };
+
+  const addPost = async (post: Post) => {
+    try {
+      const docRef = await addDoc(collection(db, 'posts'), {
+        content: post.content,
+        createdAt: post.createdAt,
+        updatedAt: post.updatedAt,
+        isPublished: post.isPublished
+      });
+      console.log('Post added with ID: ', docRef.id);
+      return docRef.id;
+    } catch (error) {
+      console.error('Error adding post: ', error);
+      throw error;
+    }
   };
 
   // Обновление поста
@@ -74,6 +91,7 @@ export const usePostStore = defineStore('posts', () => {
     allPosts: computed(() => posts.value),
     publishedPosts: computed(() => posts.value.filter(post => post.isPublished)),
     updatePost,
-    deletePost
+    deletePost,
+    addPost
   };
 });
