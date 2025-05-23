@@ -16,13 +16,7 @@ import { db } from '@/firebase';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { v4 as uuidv4 } from 'uuid';
 
-interface Post {
-  id: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-  isPublished: boolean;
-}
+import type { Post } from '../types/post';
 
 export const usePostStore = defineStore('posts', () => {
   const posts = ref<Post[]>([]);

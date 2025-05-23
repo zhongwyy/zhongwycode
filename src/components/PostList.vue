@@ -15,13 +15,7 @@
 import { defineComponent, computed } from 'vue';
 import { usePostStore } from '../stores/postStore.ts';
 
-export interface Post {
-  id: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-  isPublished: boolean;
-}
+import type { Post } from '../types/post';
 
 export default defineComponent({
   name: 'PostList',
