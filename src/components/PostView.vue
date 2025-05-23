@@ -18,7 +18,14 @@ export default defineComponent({
     const publishedPosts = computed(() => postStore.publishedPosts);
 
     const formatDate = (dateString: string) => {
-      return new Date(dateString).toLocaleString();
+      return new Date(dateString).toLocaleString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour12: false // для 24-часового формата
+      });
     };
 
     return {

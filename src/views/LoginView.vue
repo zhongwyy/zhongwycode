@@ -24,14 +24,20 @@
             required
             autocomplete="current-password"
           >
+          <p class="passwordRecovery">Forgot password?</p>
         </div>
 
         <div v-if="authError" class="error-message">
           {{ authError }}
         </div>
 
-        <button type="submit" :disabled="isLoading">
+        <button class="signIn" type="submit" :disabled="isLoading">
           <span v-if="!isLoading">Sign in</span>
+          <span v-else>Sign in...</span>
+        </button>
+        <div class="border-line"></div>
+        <button class="signGoogle" type="submit" :disabled="isLoading">
+          <span v-if="!isLoading">Sign with Google</span>
           <span v-else>Sign in...</span>
         </button>
       </form>
@@ -110,17 +116,28 @@ input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
   font-size: 1rem;
 }
 
-button {
+.signIn {
   width: 100%;
   padding: 0.75rem;
   background-color: #42b983;
   color: var(--color-text);
   border: none;
-  border-radius: 4px;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.signGoogle{
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4892af;
+  color: var(--color-text);
+  border: none;
+  border-radius: 1.5rem;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
@@ -135,5 +152,18 @@ button:disabled {
   color: #e74c3c;
   margin: 1rem 0;
   text-align: center;
+}
+
+.passwordRecovery {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.border-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  margin-top: 1.5rem;
+  margin-bottom:0.5rem ;
 }
 </style>
