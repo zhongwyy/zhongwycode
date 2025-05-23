@@ -6,10 +6,10 @@ const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASURE
+  storageBucket: "zhongwycode.firebasestorage.app",
+  messagingSenderId: "635313280532",
+  appId: "1:635313280532:web:03e4ff557440348d487901",
+  measurementId: "G-5GSWCLTWED"
 };
 
 
