@@ -1,5 +1,19 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
+import {
+  collection,
+  addDoc,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  getDocs,
+  updateDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  query,
+  orderBy
+} from 'firebase/firestore';
+import { db } from '@/firebase';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { v4 as uuidv4 } from 'uuid';
 
 interface Post {
@@ -12,66 +26,84 @@ interface Post {
 
 export const usePostStore = defineStore('posts', () => {
   const posts = ref<Post[]>([]);
+  const isLoading = ref(false);
+  const error = ref('');
 
-  // Загрузка постов из localStorage
-  const loadPosts = () => {
-    const savedPosts = localStorage.getItem('vue-posts');
-    if (savedPosts) {
-      posts.value = JSON.parse(savedPosts);
+  // Подписка на изменения в Firestore
+  const subscribeToPosts = () => {
+    const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));
+
+    return onSnapshot(q, (querySnapshot) => {
+      posts.value = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as Post[];
+    });
+  };
+
+  // Добавление поста
+  const addPost = async (post: Omit<Post, 'id'>) => {
+    try {
+      isLoading.value = true;
+      await addDoc(collection(db, 'posts'), {
+        ...post,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      });
+    } catch (err) {
+      error.value = err instanceof Error ? err.message : 'Ошибка при добавлении поста';
+    } finally {
+      isLoading.value = false;
     }
   };
 
-  // Сохранение постов в localStorage
-  const savePosts = () => {
-    localStorage.setItem('vue-posts', JSON.stringify(posts.value));
-  };
-
-  // Добавление нового поста
-  const addPost = (post: Omit<Post, 'id'>) => {
-    const newPost = {
-      ...post,
-      id: uuidv4()
-    };
-    posts.value.push(newPost);
-    savePosts();
-  };
-
   // Обновление поста
-  const updatePost = (post: Post) => {
-    const index = posts.value.findIndex(p => p.id === post.id);
-    if (index !== -1) {
-      posts.value[index] = post;
-      savePosts();
+  const updatePost = async (post: Post) => {
+    try {
+      isLoading.value = true;
+      await updateDoc(doc(db, 'posts', post.id), {
+        content: post.content,
+        isPublished: post.isPublished,
+        updatedAt: new Date().toISOString()
+      });
+    } catch (err) {
+      error.value = err instanceof Error ? err.message : 'Ошибка при обновлении поста';
+    } finally {
+      isLoading.value = false;
     }
   };
 
   // Удаление поста
-  const deletePost = (id: string) => {
-    posts.value = posts.value.filter(post => post.id !== id);
-    savePosts();
+  const deletePost = async (id: string) => {
+    try {
+      isLoading.value = true;
+      await deleteDoc(doc(db, 'posts', id));
+    } catch (err) {
+      error.value = err instanceof Error ? err.message : 'Ошибка при удалении поста';
+    } finally {
+      isLoading.value = false;
+    }
   };
 
   // Получение всех постов
-  const allPosts = computed(() => [...posts.value].sort((a, b) =>
-    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  ));
+  const allPosts = computed(() => [...posts.value]);
 
   // Получение опубликованных постов
   const publishedPosts = computed(() =>
     allPosts.value.filter(post => post.isPublished)
   );
 
-  // Инициализация - загрузка постов при создании хранилища
-  loadPosts();
+  // Инициализация - подписка на изменения
+  subscribeToPosts();
 
   return {
     posts,
     allPosts,
     publishedPosts,
+    isLoading,
+    error,
     addPost,
     updatePost,
-    deletePost,
-    loadPosts,
-    savePosts
+    deletePost
   };
 });
