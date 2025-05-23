@@ -14,8 +14,10 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import { usePostStore } from '../stores/postStore.ts';
+import { onUnmounted } from 'vue';
+import type { Post } from '../types/post.ts';
 
-import type { Post } from '../types/post';
+let isMounted = true;
 
 export default defineComponent({
   name: 'PostList',
@@ -26,16 +28,20 @@ export default defineComponent({
     const formatDate = (dateString: string) => {
       return new Date(dateString).toLocaleString();
     };
+
+
     const togglePublish = async (post: Post) => {
-    try {
-    await postStore.updatePost({
-      ...post,
-      isPublished: !post.isPublished // Инвертируем статус
-    });
+  try {
+    await postStore.updatePost(post);
+    if (!isMounted) return; // Не обновлять состояние, если компонент размонтирован
+    // Дополнительные действия (если нужны)
   } catch (error) {
-    console.error("Ошибка публикации:", error);
+    console.error("Error:", error);
   }
 };
+onUnmounted(() => {
+  isMounted = false;
+});
 
     const deletePost = (id: string) => {
       if (confirm('Вы уверены, что хотите удалить этот пост?')) {

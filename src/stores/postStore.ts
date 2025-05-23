@@ -35,6 +35,8 @@ export const usePostStore = defineStore('posts', () => {
     });
   };
 
+
+
   // Добавление поста
   const addPost = async (post: Omit<Post, 'id'>) => {
     try {
@@ -54,16 +56,14 @@ export const usePostStore = defineStore('posts', () => {
   // Обновление поста
   const updatePost = async (post: Post) => {
     try {
-      isLoading.value = true;
-      await updateDoc(doc(db, 'posts', post.id), {
-        content: post.content,
-        isPublished: post.isPublished,
+      const postRef = doc(db, 'posts', post.id);
+      await updateDoc(postRef, {
+        isPublished: !post.isPublished,
         updatedAt: new Date().toISOString()
       });
-    } catch (err) {
-      error.value = err instanceof Error ? err.message : 'Ошибка при обновлении поста';
-    } finally {
-      isLoading.value = false;
+      // Локальное состояние обновится через onSnapshot
+    } catch (error) {
+      console.error("Firestore error:", error);
     }
   };
 
