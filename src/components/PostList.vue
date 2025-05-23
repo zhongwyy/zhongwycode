@@ -4,48 +4,65 @@
       <div class="post-content" v-html="post.content"></div>
       <div class="post-meta">
         <span>{{ formatDate(post.createdAt) }}</span>
-        <button @click="togglePublish(post)">{{ post.isPublished ? 'Снять с публикации' : 'Опубликовать' }}</button>
-        <button @click="deletePost(post.id)" class="delete-btn">Удалить</button>
+        <button
+          @click="togglePublish(post)"
+          :disabled="loadingStates[post.id]"
+        >
+          {{ post.isPublished ? 'Снять с публикации' : 'Опубликовать' }}
+          <span v-if="loadingStates[post.id]">...</span>
+        </button>
+        <button
+          @click="deletePost(post.id)"
+          class="delete-btn"
+          :disabled="loadingStates[post.id]"
+        >
+          Удалить
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { usePostStore } from '../stores/postStore.ts';
-import { onUnmounted } from 'vue';
-import type { Post } from '../types/post.ts';
-
-let isMounted = true;
+import { defineComponent, computed, ref } from 'vue';
+import { usePostStore } from '../stores/postStore';
+import type { Post } from '../types/post';
 
 export default defineComponent({
   name: 'PostList',
   setup() {
     const postStore = usePostStore();
     const posts = computed(() => postStore.allPosts);
+    const loadingStates = ref<Record<string, boolean>>({});
 
     const formatDate = (dateString: string) => {
       return new Date(dateString).toLocaleString();
     };
 
-
     const togglePublish = async (post: Post) => {
-  try {
-    await postStore.updatePost(post);
-    if (!isMounted) return; // Не обновлять состояние, если компонент размонтирован
-    // Дополнительные действия (если нужны)
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
-onUnmounted(() => {
-  isMounted = false;
-});
+      try {
+        loadingStates.value[post.id] = true;
+        await postStore.updatePost({
+          ...post,
+          isPublished: !post.isPublished
+        });
+      } catch (error) {
+        console.error("Ошибка при публикации:", error);
+      } finally {
+        loadingStates.value[post.id] = false;
+      }
+    };
 
-    const deletePost = (id: string) => {
+    const deletePost = async (id: string) => {
       if (confirm('Вы уверены, что хотите удалить этот пост?')) {
-        postStore.deletePost(id);
+        try {
+          loadingStates.value[id] = true;
+          await postStore.deletePost(id);
+        } catch (error) {
+          console.error("Ошибка при удалении:", error);
+        } finally {
+          loadingStates.value[id] = false;
+        }
       }
     };
 
@@ -53,7 +70,8 @@ onUnmounted(() => {
       posts,
       formatDate,
       togglePublish,
-      deletePost
+      deletePost,
+      loadingStates
     };
   }
 });

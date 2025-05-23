@@ -94,7 +94,7 @@ export default defineComponent({
           isPublished: false
         };
 
-        postStore.addPost(newPost);
+        postStore.updatePost(newPost);
         content.value = '';
         alert('Пост сохранен!');
       }
