@@ -91,6 +91,14 @@ onMounted(() => {
           <button @click="showNotification" class="nav-link">Updates</button>
           <button @click="navigateTo('/faq')" class="nav-link">FAQ</button>
         </div>
+        <div class="sign">
+          <div class="login">
+        <a @click="showNotification">Sign Up</a>
+      </div>
+        <div class="login">
+        <a @click="navigateTo('/Login')">Sign in</a>
+      </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -144,10 +152,11 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
   height: 100%;
+  gap: 7.5rem;
 }
 
 .logo-container {
@@ -165,7 +174,7 @@ onMounted(() => {
 .search-container {
   flex: 1;
   padding: 0 20px;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .search-container input {
@@ -227,7 +236,6 @@ onMounted(() => {
 }
 
 .main-content {
-  padding-top: 30px;
   min-height: calc(100vh - 160px);
 }
 
@@ -241,6 +249,13 @@ onMounted(() => {
 .footer-content {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.login {
+  cursor: pointer;
+}
+.login:hover {
+  color: var(--color-primary-hover);
 }
 
 .footer-links {
@@ -329,5 +344,11 @@ onMounted(() => {
     font-size: 0.9rem;
     padding: 8px 10px;
   }
+}
+
+.sign {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 </style>

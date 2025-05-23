@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import FloatingPanel from '../components/icons/addPanel.vue'
 import BottomPopup from '../components/icons/warningPanel.vue'
-import PostView from '@/components/PostView.vue';
+import PostView from '../components/PostView.vue';
 
 import { defineComponent } from 'vue';
 
@@ -33,22 +33,30 @@ function showNotification() {
 
     <main class="main-content">
       <div class="content-container">
-        <div class="nav-col">
-          <div class="nav-title-col">
-            <h4>@BLOG POSTS</h4>
-          </div>
-          <div class="nav-info">
-            <a @click="showNotification" class="trigger-btn"># Development of the Docs...</a>
-            <a @click="showNotification" class="trigger-btn"># The application design is...</a>
-            <a @click="showNotification" class="trigger-btn"># Updating app features and...</a>
-            <a @click="showNotification" class="trigger-btn"># The shop is opening soon!</a>
-            <a @click="showNotification" class="trigger-btn"># Opening an app for my...</a>
+        <div class="nav-col-right">
+          <div class="nav-info-right">
+            <h4>In this blog</h4>
+            <a href="#" class="trigger-btn">Twitter</a>
+            <a href="#" class="trigger-btn">Gmail</a>
+            <a href="#" class="trigger-btn">Reddit</a>
+            <a href="#" class="trigger-btn">GitHub</a>
+            <a href="#" class="trigger-btn">QA</a>
           </div>
         </div>
 
         <div class="content-col">
           <div class="posts-view">
             <PostView />
+          </div>
+        </div>
+        <div class="nav-col">
+          <div class="nav-info">
+            <h3>BLOG POSTS</h3>
+            <a @click="showNotification" class="trigger-btn"># Development of the Docs...</a>
+            <a @click="showNotification" class="trigger-btn"># The application design is...</a>
+            <a @click="showNotification" class="trigger-btn"># Updating app features and...</a>
+            <a @click="showNotification" class="trigger-btn"># The shop is opening soon!</a>
+            <a @click="showNotification" class="trigger-btn"># Opening an app for my...</a>
           </div>
         </div>
       </div>
@@ -93,7 +101,7 @@ a:hover {
 
 .content-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -104,16 +112,20 @@ a:hover {
 .nav-col {
   position: sticky;
   top: 10rem;
-  order: 2;
   background-color: var(--color-bg);
   padding: 1rem;
   border-radius: var(--radius-md);
   padding-top: 1.5rem;
 }
 
-.nav-title-col h4 {
-  margin-bottom: 1rem;
-  color: var(--color-primary);
+.nav-col-right {
+  position: sticky;
+  top: 10rem;
+  background-color: var(--color-bg);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  padding-top: 6rem;
+  flex: 1;
 }
 
 .nav-info {
@@ -123,14 +135,37 @@ a:hover {
   gap: 0.5rem;
 }
 
+.nav-info-right{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.2rem;
+}
+
 .nav-info a {
   border-left: 2px solid var(--color-border);
-  padding: 0.5rem 0.75rem;
+  padding: 0.15rem 0.3rem;
   transition: border-color 0.2s ease;
+}
+
+.nav-info-right a {
+  padding: 0.15rem 0.3rem;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px
 }
 
 .nav-info a:hover {
   border-color: var(--color-primary-hover);
+}
+
+.nav-info-right a:hover {
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-hover);
+  text-decoration-thickness: 2px
 }
 
 /* Content column */
@@ -177,7 +212,6 @@ a:hover {
   }
 
   .nav-col {
-    order: 1;
     position: sticky;
     top: 10rem;
     align-self: flex-start;

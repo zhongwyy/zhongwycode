@@ -34,12 +34,14 @@ export default defineComponent({
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--color-bg);
 }
 
 .post {
   margin-bottom: 30px;
   padding: 20px;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
 }
 
 .post-date {

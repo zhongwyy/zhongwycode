@@ -158,5 +158,6 @@ button:hover {
 }
 
 .post-content img {
-  width: 750px;
+  width: 720px;
+  border-radius: var(--radius-lg);
 }

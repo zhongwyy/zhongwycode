@@ -24,6 +24,8 @@ export const usePostStore = defineStore('posts', () => {
   const posts = ref<Post[]>([]);
   let unsubscribe: () => void;
 
+
+
   // Подписка на изменения
   const subscribeToPosts = () => {
     const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));

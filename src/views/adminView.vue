@@ -1,6 +1,10 @@
 <template>
   <div class="admin-view">
-    <h1>Панель администратора</h1>
+    <div class="admin-header">
+      <h1>Панель администратора</h1>
+      <button @click="logout" class="logout-btn">Выйти</button>
+    </div>
+
     <PostEditor />
     <h2>Все посты</h2>
     <PostList />
@@ -9,14 +13,26 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PostEditor from '../components/PostEditor.vue';
-import PostList from '../components/PostList.vue';
+import PostEditor from '@/components/PostEditor.vue';
+import PostList from '@/components/PostList.vue';
+import { useAuthStore } from '@/stores/authStore';
 
 export default defineComponent({
   name: 'AdminView',
   components: {
     PostEditor,
     PostList
+  },
+  setup() {
+    const authStore = useAuthStore();
+
+    const logout = async () => {
+      await authStore.logout();
+    };
+
+    return {
+      logout
+    };
   }
 });
 </script>
@@ -28,8 +44,24 @@ export default defineComponent({
   padding: 20px;
 }
 
-h1, h2 {
-  color: #2c3e50;
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+h1, h2 {
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>
