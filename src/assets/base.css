@@ -15,7 +15,8 @@
 
 /* light-theme-color */
 :root {
-  --color-bg: #ffffff;
+  --color-bg-nav: #F9FEFF ;
+  --color-bg: #F1FAFD;
   --color-bg-secondary: #f8f9fa;
   --color-bg-tertiary: #e9ecef;
   --color-text: #212529;
@@ -91,8 +92,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #121212;
-    --color-bg-secondary: #1e1e1e;
+    --color-bg-nav: #111A27;
+    --color-bg: #111A27;
+    --color-bg-secondary: #112840;
     --color-bg-tertiary: #2d2d2d;
     --color-text: #f8f9fa;
     --color-text-secondary: #e9ecef;

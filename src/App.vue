@@ -146,6 +146,7 @@ onMounted(() => {
 .navbar {
   width: 100%;
   height: 60px;
+  background-color: var(--color-bg-nav);
 }
 
 .navbar-container {
@@ -184,7 +185,7 @@ onMounted(() => {
   border: 1px solid var(--color-border);
   outline: none;
   font-size: 1rem;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
   color: var(--color-text);
 }
 

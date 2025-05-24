@@ -47,7 +47,7 @@ export default defineComponent({
 .post {
   margin-bottom: 30px;
   padding: 20px;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   border-radius: var(--radius-lg);
 }
 

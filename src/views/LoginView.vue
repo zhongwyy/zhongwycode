@@ -1,11 +1,11 @@
 <template>
   <div class="login-view">
     <div class="login-form">
-      <h1>Sign in</h1>
+      <h1>Войти</h1>
 
       <form @submit.prevent="handleLogin">
         <div class="form-group">
-          <label for="username">Email</label>
+          <label for="username">Почта</label>
           <input
             id="username"
             v-model="username"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Пароль</label>
           <input
             id="password"
             v-model="password"
@@ -24,7 +24,7 @@
             required
             autocomplete="current-password"
           >
-          <p class="passwordRecovery">Forgot password?</p>
+          <p class="passwordRecovery">Забыли пароль?</p>
         </div>
 
         <div v-if="authError" class="error-message">
@@ -32,12 +32,12 @@
         </div>
 
         <button class="signIn" type="submit" :disabled="isLoading">
-          <span v-if="!isLoading">Sign in</span>
+          <span v-if="!isLoading">Вход</span>
           <span v-else>Sign in...</span>
         </button>
         <div class="border-line"></div>
         <button class="signGoogle" type="submit" :disabled="isLoading">
-          <span v-if="!isLoading">Sign with Google</span>
+          <span v-if="!isLoading">Войти с Google</span>
           <span v-else>Sign in...</span>
         </button>
       </form>

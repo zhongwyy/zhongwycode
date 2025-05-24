@@ -19,6 +19,7 @@ defineComponent({
 
 const popup = ref<InstanceType<typeof BottomPopup>>()
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function showNotification() {
   popup.value?.showPopup()
 }
@@ -28,19 +29,16 @@ function showNotification() {
 <template>
   <div class="page-container">
     <FloatingPanel :interval="45000" :initial-show="true" border-color="#f72585">
-      <p>You can buy something in my <a href="#">shop!</a></p>
+      <p>Тут скоро будет что-то...</p>
     </FloatingPanel>
 
     <main class="main-content">
       <div class="content-container">
         <div class="nav-col-right">
           <div class="nav-info-right">
-            <h4>In this blog</h4>
-            <a href="#" class="trigger-btn">Twitter</a>
-            <a href="#" class="trigger-btn">Gmail</a>
-            <a href="#" class="trigger-btn">Reddit</a>
-            <a href="#" class="trigger-btn">GitHub</a>
-            <a href="#" class="trigger-btn">QA</a>
+            <h4>Ссылки</h4>
+            <a href="https://modrinth.com/user/merpokcasterl" class="trigger-btn">Modrinth</a>
+            <a href="https://www.curseforge.com/members/zhongwy/projects" class="trigger-btn">CurseForge</a>
           </div>
         </div>
 
@@ -51,19 +49,19 @@ function showNotification() {
         </div>
         <div class="nav-col">
           <div class="nav-info">
-            <h3>BLOG POSTS</h3>
-            <a @click="showNotification" class="trigger-btn"># Development of the Docs...</a>
+            <h3>Посты</h3>
+            <!-- <a @click="showNotification" class="trigger-btn"># Development of the Docs...</a>
             <a @click="showNotification" class="trigger-btn"># The application design is...</a>
             <a @click="showNotification" class="trigger-btn"># Updating app features and...</a>
             <a @click="showNotification" class="trigger-btn"># The shop is opening soon!</a>
-            <a @click="showNotification" class="trigger-btn"># Opening an app for my...</a>
+            <a @click="showNotification" class="trigger-btn"># Opening an app for my...</a> -->
           </div>
         </div>
       </div>
     </main>
 
     <BottomPopup ref="popup" :auto-close-delay="2000">
-    <span>This feature is not implemented yet</span>
+    <span>Это еще не работает</span>
     </BottomPopup>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="admin-view">
     <div class="admin-header">
-      <h1>Панель администратора</h1>
+      <h1>Редактор постов</h1>
       <button @click="logout" class="logout-btn">Выйти</button>
     </div>
 

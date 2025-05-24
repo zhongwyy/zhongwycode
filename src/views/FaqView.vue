@@ -1,16 +1,16 @@
 <template>
   <div class="faqInfo">
     <header>
-      <h1>Minecraft modding FAQ</h1>
-      <p class="subtitle">Frequently Asked Questions for Users</p>
+      <h1>FAQ по моддингу</h1>
+      <p class="subtitle">Часто задаваемые вопросы.</p>
     </header>
 
     <div class="faq-container">
       <div class="faq-section">
-        <div class="section-title">1. What mod categories do I prefer?</div>
+        <div class="section-title">1. Какие категории модов\сборки я разрабатываю\собираю\предпочитаю?</div>
         <ul class="faq-list">
           <li class="faq-item">
-            <div class="faq-question">Mods for vanilla game with minor gameplay changes.</div>
+            <div class="faq-question">В основном моды\сборки дополняющие ванильный майнкрафт, но не меняющие полностью геймплей.</div>
             <div class="faq-answer">
               <p>It depends on your goals:</p>
               <ul>
@@ -34,7 +34,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">Graphic mods such as shaders, textures, GUI.</div>
+            <div class="faq-question">Графические моды\шейдеры, текстуры, GUI.</div>
             <div class="faq-answer">
               <p>It varies, but with consistent practice:</p>
               <ul>
@@ -46,7 +46,7 @@
           </li>
           <li class="faq-item">
             <div class="faq-question">
-              Mods that change the behavior of the world, change generation.
+              Предпочитаю моды меняющие генерацию мира, но сохраняющие ванильный дух игры.
             </div>
             <div class="faq-answer">
               <p>
@@ -60,10 +60,10 @@
       </div>
 
       <div class="faq-section">
-        <div class="section-title">2. Coding Problems & Debugging</div>
+        <div class="section-title">2. Какие программы\решения я использую\предпочитаю?</div>
         <ul class="faq-list">
           <li class="faq-item">
-            <div class="faq-question">Why is my code not working?</div>
+            <div class="faq-question">Для разработки модов использую fabric\forge с gradle+java</div>
             <div class="faq-answer">
               <p>Common issues:</p>
               <ul>
@@ -78,7 +78,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">How do I improve my problem-solving skills?</div>
+            <div class="faq-question">При разработке пользуюсь VSCode\IntelliJ IDEA</div>
             <div class="faq-answer">
               <ul>
                 <li>
@@ -91,7 +91,7 @@
             </div>
           </li>
           <li class="faq-item">
-            <div class="faq-question">What is a "stack overflow," and how do I fix it?</div>
+            <div class="faq-question">Для ресурсов пользуюсь aseprite</div>
             <div class="faq-answer">
               <p>
                 It happens when a function calls itself infinitely (recursion without a base case).
@@ -107,10 +107,10 @@
       </div>
 
       <div class="faq-section">
-        <div class="section-title">3. Career & Jobs in Programming</div>
+        <div class="section-title">3. Насколько часто я что-то делаю и чем занимаюсь сейчас?</div>
         <ul class="faq-list">
           <li class="faq-item">
-            <div class="faq-question">How do I build a strong portfolio?</div>
+            <div class="faq-question">На самом деле разрабатываю я что-то не так часто</div>
             <div class="faq-answer">
               <ul>
                 <li>Work on <strong>real projects</strong> (not just tutorials).</li>
@@ -124,7 +124,7 @@
           </li>
           <li class="faq-item">
             <div class="faq-question">
-              What's the difference between a developer, engineer, and programmer?
+              Сейчас больше занимаюсь настройкой данного сайта и больше углобляюсь в web.
             </div>
             <div class="faq-answer">
               <ul>
@@ -134,64 +134,11 @@
               </ul>
             </div>
           </li>
-          <li class="faq-item">
-            <div class="faq-question">How much do programmers earn?</div>
-            <div class="faq-answer">
-              <p>Salaries vary by location/experience:</p>
-              <ul>
-                <li><strong>Junior Dev:</strong> $50k–$80k/year.</li>
-                <li><strong>Senior Dev:</strong> $100k–$180k/year.</li>
-                <li><strong>FAANG/High-tier:</strong> $150k–$300k+.</li>
-              </ul>
-            </div>
-          </li>
         </ul>
       </div>
 
       <div class="faq-section">
-        <div class="section-title">4. Tools & Technologies</div>
-        <ul class="faq-list">
-          <li class="faq-item">
-            <div class="faq-question">What's the best code editor/IDE?</div>
-            <div class="faq-answer">
-              <p>Popular choices:</p>
-              <ul>
-                <li><strong>VS Code</strong> (lightweight, extensions).</li>
-                <li><strong>IntelliJ IDEA</strong> (Java/Kotlin).</li>
-                <li><strong>PyCharm</strong> (Python).</li>
-                <li><strong>Vim/Emacs</strong> (for terminal lovers).</li>
-              </ul>
-            </div>
-          </li>
-          <li class="faq-item">
-            <div class="faq-question">Should I use Git?</div>
-            <div class="faq-answer">
-              <p><strong>Yes!</strong> Git is essential for version control. Learn:</p>
-              <ul>
-                <li>
-                  Basic commands (<code>git clone</code>, <code>commit</code>, <code>push</code>).
-                </li>
-                <li>Branching & merging.</li>
-                <li>Platforms like <strong>GitHub/GitLab</strong>.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="faq-item">
-            <div class="faq-question">What's the difference between SQL and NoSQL?</div>
-            <div class="faq-answer">
-              <ul>
-                <li><strong>SQL</strong> (MySQL, PostgreSQL): Structured, table-based.</li>
-                <li>
-                  <strong>NoSQL</strong> (MongoDB, Redis): Flexible, document/key-value storage.
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="faq-section">
-        <div class="section-title">5. My social networks and how to find me</div>
+        <div class="section-title">4. Как найти меня?</div>
         <ul class="faq-list">
           <li class="faq-item">
             <div class="faq-question">Telegram, Twitter/X, Reddit</div>
@@ -353,10 +300,10 @@ h1 {
   background-color: rgba(37, 99, 235, 0.05);
 }
 
-.faq-question::after {
+/* .faq-question::after {
   content: '▸';
   transition: transform 0.3s ease;
-}
+} */
 
 .faq-question.active::after {
   transform: rotate(90deg);

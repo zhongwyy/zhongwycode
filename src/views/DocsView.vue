@@ -1,15 +1,15 @@
 <template>
   <div class="docs-container">
     <header>
-      <h1>Minecraft docs</h1>
-      <p class="subtitle">All sections on my minecraft projects</p>
+      <h1>Майнкрафт проекты</h1>
+      <p class="subtitle">Все секции по майнкрафт проектам</p>
     </header>
 
     <div class="docs-grid">
       <DocCard
         title="Minecraft fabric mods"
         category="green"
-        description="Factory mods developed for new versions of minecraft. Basically here you will find mods for a cozy and enjoyable game"
+        description="Моды на фабрике которые уже реализованы вы сможете найти тут!"
         :tags="['Fabric', 'Development', '1.21+']"
         updated="May 17th, 2025"
       />
@@ -17,7 +17,7 @@
       <DocCard
         title="Modpacks"
         category="rose"
-        description="Beautiful modpacks created for co-op play of Minecraft, fully optimized for playing together with beautiful shaders and resource packs"
+        description="Красивые модпаки для кооперативной игры, оптимизированные не только для кооперативной игры, но и с учетом встроенных шейдеров\текстур"
         :tags="['Collection', '1.20+', 'Optimized', 'Modrinth']"
         updated="May 17th, 2025"
       />
@@ -25,7 +25,7 @@
       <DocCard
         title="Resource Packs"
         category="blue"
-        description="Beautiful themed resource packs drawn by me compatible with both vanilla and modified Minecraft"
+        description="Красивые ресурспаки созданные мной вручную"
         :tags="['GUI', 'Cosy', '1.20+']"
         updated="May 17th, 2025"
       />
@@ -33,7 +33,7 @@
       <DocCard
         title="Minecraft forge mods"
         category="pink"
-        description="Factory mods developed for new versions of minecraft on forge. Basically here you will find mods for a cozy and enjoyable game"
+        description="Моды на фордже которые уже реализованы вы сможете найти тут!"
         :tags="['Forge', 'Development', '1.20+']"
         updated="May 17th, 2025"
       />

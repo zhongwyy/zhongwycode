@@ -16,11 +16,11 @@ function showNotification() {
 <template>
   <section class="hero">
     <div class="container">
-      <h1 class="titleh1"><img src="../assets/minecraftico.svg" type="image/svg+xml" width="48" height="48">Minecraft mods by zhongwy<img src="../assets/minecraftico.svg" type="image/svg+xml" width="48" height="48"></h1>
-      <p>Welcome my friends!<br>Here you can find my mods, modpacks, resourcepacks that I do sometimes!</p>
+      <h1 class="titleh1"><img src="../assets/3blockDirt.svg" type="image/svg+xml" width="96" height="96">Майнкрафт моды\веб разработка by zhongwy<img src="../assets/3blockDirtCubbleObsidian.svg" type="image/svg+xml" width="96" height="96"></h1>
+      <p>Привет друзья!<br>Тут вы найдете мои моды, ресурспаки, сборки которые я иногда делаю.</p>
       <div class="cta-buttons">
-        <a @click="showNotification" class="btn btn-primary">Explore Projects</a>
-        <a @click="goToDocs" class="btn btn-outline">View Documentation</a>
+        <a @click="showNotification" class="btn btn-primary">Документация</a>
+        <a @click="goToDocs" class="btn btn-outline">Проекты</a>
       </div>
     </div>
   </section>
@@ -29,35 +29,35 @@ function showNotification() {
   <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Development Info</h2>
-        <p>Full information about where, what and why I write code. </p>
+        <h2>Разработка</h2>
+        <p>Здесь можно посмотреть обновления по выходу последних версий</p>
       </div>
 
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🧠</div>
-          <h3>A stupid development </h3>
+          <h3>Бесполезная разработка</h3>
           <p class="text">
-            Custom scripts, stupid, useless and very native things that I do for learning!
+            Разные скрипты, тупые, бесполезные и очень простые вещи которые я делаю ради обучения!
           </p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">📚</div>
-          <h3>Web development</h3>
-          <p class="text">Here are developments for web applications written in vue.js.</p>
+          <h3>Веб разработка</h3>
+          <p class="text">Тут я учусь разрабатывать веб-приложения\странички и в целом ВЕБ!</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">🧊</div>
-          <h3>Minecraft developments</h3>
-          <p class="text">I really love mods developed for Minecraft!</p>
+          <h3>Майнкрафт разработка</h3>
+          <p class="text">Я очень люблю моды для майнкрафта поэтому и делаю</p>
         </div>
       </div>
     </div>
   </section>
   <BottomPopup ref="popup" :auto-close-delay="2000">
-    <span>This feature is not implemented yet</span>
+    <span>Пока не работает.</span>
   </BottomPopup>
 </template>
 
@@ -175,10 +175,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   border-radius: var(--radius-md);
+  border-color: var(--color-border);
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -186,7 +187,7 @@ body {
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.2);
 }
 
 .feature-icon {
