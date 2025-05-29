@@ -117,12 +117,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: brightness(1000%) contrast(0%) saturate(0%) opacity(0.9);
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -160,6 +154,9 @@ button:hover {
 }
 
 .post-content img {
-  width: 720px;
+  display: block;
+  margin: auto;
+  max-width: 720px;
   border-radius: var(--radius-lg);
+  align-self: center;
 }

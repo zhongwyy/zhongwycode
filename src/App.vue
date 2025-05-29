@@ -65,7 +65,7 @@ onMounted(() => {
     <nav class="navbar">
       <div class="navbar-container">
         <div class="logo-container" @click="navigateTo('/')">
-          <img class="logo" src="./assets/angleLight.png" alt="zcode logo" width="64" height="64" />
+          <img class="logo" src="./assets/fav.png" alt="zcode logo" width="42" height="45" />
           <span class="logo-name">zhongwycode</span>
         </div>
 
@@ -163,7 +163,7 @@ onMounted(() => {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2rem;
   cursor: pointer;
 }
 

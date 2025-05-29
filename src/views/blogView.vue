@@ -99,7 +99,7 @@ a:hover {
 
 .content-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -108,7 +108,6 @@ a:hover {
 
 /* Navigation column */
 .nav-col {
-  position: sticky;
   top: 10rem;
   background-color: var(--color-bg);
   padding: 1rem;
@@ -117,13 +116,11 @@ a:hover {
 }
 
 .nav-col-right {
-  position: sticky;
   top: 10rem;
   background-color: var(--color-bg);
   padding: 1rem;
   border-radius: var(--radius-md);
-  padding-top: 6rem;
-  flex: 1;
+  padding-top: 1.5rem;
 }
 
 .nav-info {
@@ -211,7 +208,17 @@ a:hover {
 
   .nav-col {
     position: sticky;
-    top: 10rem;
+    top: 8.5rem;
+    align-self: flex-start;
+    height: calc(100vh - 2rem);
+    overflow-y: auto;
+    flex: 0 0 250px;
+    padding-top: 1rem;
+  }
+
+  .nav-col-right {
+    position: sticky;
+    top: 8.5rem;
     align-self: flex-start;
     height: calc(100vh - 2rem);
     overflow-y: auto;
